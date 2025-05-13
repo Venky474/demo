@@ -1,38 +1,80 @@
-![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/wokwi_test/badge.svg) ![](../../workflows/fpga/badge.svg)
+Here's a `README.md` text tailored for your MNIST dataset classification project using TensorFlow and Keras:
 
-# Tiny Tapeout Wokwi Project Template
+---
 
-- [Read the documentation for project](docs/info.md)
+# MNIST Handwritten Digit Classification
 
-## What is Tiny Tapeout?
+This repository contains a Jupyter Notebook that demonstrates a simple neural network model built with TensorFlow/Keras to classify handwritten digits from the [MNIST dataset](http://yann.lecun.com/exdb/mnist/).
 
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital and analog designs manufactured on a real chip.
+<a href="https://colab.research.google.com/github/Venky474/demo/blob/main/MNIST.ipynb" target="_blank">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
 
-To learn more and get started, visit https://tinytapeout.com.
+## 📌 Overview
 
-## Wokwi Projects
+The notebook demonstrates:
 
-Edit the [info.yaml](info.yaml) and change the `wokwi_id` to the ID of your Wokwi project. You can find the ID in the URL of your project, it's the big number after `wokwi.com/projects/`.
+* Loading and preprocessing the MNIST dataset.
+* Building a fully-connected neural network using both the **Sequential API** and **Functional API**.
+* Training the model and evaluating accuracy.
+* Visualizing predictions using `matplotlib`.
 
-The GitHub action will automatically fetch the digital netlist from Wokwi and build the ASIC files.
+## 🧠 Model Architecture
 
-## Enable GitHub actions to build the results page
+The final model uses the following architecture:
 
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
+* Input Layer: 784 units (28x28 flattened)
+* Dense Layer: 512 units with ReLU activation
+* Dense Layer: 256 units with ReLU activation
+* Output Layer: 10 units with Softmax activation (for digit classification)
 
-## Resources
+## ✅ Results
 
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
-- [Build your design locally](https://www.tinytapeout.com/guides/local-hardening/)
+* **Training Accuracy:** \~99%
+* **Test Accuracy:** \~97.8%
 
-## What next?
+## 🔍 Example Prediction
 
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@tinytapeout](https://twitter.com/tinytapeout)
+A random image from the test set is selected and displayed, along with its predicted and actual label.
+
+## 🚀 Getting Started
+
+To run this notebook:
+
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/Venky474/demo.git
+   cd demo
+   ```
+2. Open the `MNIST.ipynb` file in Jupyter Notebook or click the **Open in Colab** badge above.
+
+## 📦 Dependencies
+
+* Python 3.x
+* TensorFlow 2.x
+* NumPy
+* Matplotlib
+
+You can install the required packages using:
+
+```bash
+pip install tensorflow numpy matplotlib
+```
+
+## 📂 Dataset
+
+The MNIST dataset is automatically downloaded via TensorFlow:
+
+```python
+from tensorflow.keras.datasets import mnist
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+```
+
+## ✍️ Author
+
+* [Venky474](https://github.com/Venky474)
+
+---
+
+Let me know if you'd like a more technical, minimal, or creative version of this README!
